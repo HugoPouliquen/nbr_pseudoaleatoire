@@ -25,9 +25,10 @@ def possibility(sumvalue):
             for k in dices:
                 for l in dices:
                     for m in dices:
-                        res = i + j + k + l + m
-                        if res == sumvalue:
-                            possibility += 1
+                        for n in dices:
+                            res = i + j + k + l + m + n
+                            if res == sumvalue:
+                                possibility += 1
     return str(possibility)
 
 print('Traitement pour '+ str(dices_nbr) +' dés')
@@ -39,6 +40,6 @@ print('\n-> Lancement des dés...\n')
 print('Somme des dés lancés : ' + str(res_sum))
 
 print('Nombre de combinaisons possible pour :')
-for i in range(6, (6*dices_nbr - 5)):
+for i in range(5, (6*dices_nbr) +1):
     res = possibility(i)
     print(str(i) + ' : ' + res)
