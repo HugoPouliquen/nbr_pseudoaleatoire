@@ -64,6 +64,6 @@ print('\nGraphique des fréquences')
 plt.title("Fréquence d'apparition")
 
 plt.plot(sorties, frequences)
-plt.xlabel('Sorties possible')
+plt.xlabel('Sorties possibles')
 plt.ylabel('Fréquence (%)')
 plt.show()
