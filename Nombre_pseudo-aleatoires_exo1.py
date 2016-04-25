@@ -1,6 +1,5 @@
 import random
 import matplotlib.pyplot as plt
-import numpy as np
 
 N = 10
 nbr_loop = 10000
