@@ -19,4 +19,4 @@ plt.ylabel("Nombre d'apparitions")
 plt.show()
 
 # Commentaires :
-# Cela n'est pas non plus très aléatoires.. -> à creuser
+# Cela n'est pas non plus très aleatoires.. -> à creuser

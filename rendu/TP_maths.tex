@@ -1,10 +1,10 @@
 \documentclass{book}
-\usepackage[latin1]{inputenc}    
+\usepackage[utf8x]{inputenc}    
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}     
 \usepackage{listings}
 \usepackage{graphicx}
-\title{Travaux Pratiques - Probabilités}
+\title{Travaux Pratiques - ProbabilitÃ©s}
 
 \author{Dylan \bsc{TROLES} \& Hugo \bsc{POULIQUEN}}
 
@@ -13,38 +13,112 @@
 \begin{document}
 \maketitle
 
-\chapter{Génération de nombres pseudo-aléatoires}
-\section{Approche fréquentielle des probabilités}
-\subsection{Le lancer de 5 dés}
-Une épreuve consiste à lancer 5 dés et à considérer la somme amenée à chaque lancer.
+\chapter{GÃ©nÃ©ration de nombres pseudo-alÃ©atoires}
+\section{Approche frÃ©quentielle des probabilitÃ©s}
+\subsection{Le lancer de 5 dÃ©s}
+Une Ã©preuve consiste Ã  lancer 5 dÃ©s et Ã  considÃ©rer la somme amenÃ©e Ã  chaque lancer.
 Construire un programme qui donne : 
 \begin{enumerate}
-	\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la fréquence de chaque sortie.
-	\item Un tableau et un graphique donnant les fréquences de chaque sortie.
+	\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la frÃ©quence de chaque sortie.
+	\item Un tableau et un graphique donnant les frÃ©quences de chaque sortie.
 \end{enumerate}
-Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est nécessaire d'installer la librairie matplotlib.
+Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est nÃ©cessaire d'installer la librairie matplotlib.
 \lstinputlisting[numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
-Voici le résultat généré par le script : 
-\section{Nombres pseudo aléatoires}
+Voici le rÃ©sultat gÃ©nÃ©rÃ© par le script : 
+\begin{lstlisting}[frame=single]
+$ python3 lancer_de_5_des.py 
+
+Traitement pour : 5 des comportant 6 faces de 1 a 6
+Nombre de sommes possibles : 25
+
+-> Lancement des des...
+Somme des des lances : 21
+
+Tableau du nombre de combinaisons possibles pour chaque somme :
+5 : 1
+6 : 5
+7 : 15
+8 : 35
+9 : 70
+10 : 126
+11 : 205
+12 : 305
+13 : 420
+14 : 540
+15 : 651
+16 : 735
+17 : 780
+18 : 780
+19 : 735
+20 : 651
+21 : 540
+22 : 420
+23 : 305
+24 : 205
+25 : 126
+26 : 70
+27 : 35
+28 : 15
+29 : 5
+30 : 1
+
+Tableau des frequences de chaque somme :
+5 : 0.01286008230452675
+6 : 0.06430041152263374
+7 : 0.19290123456790123
+8 : 0.45010288065843623
+9 : 0.9002057613168725
+10 : 1.6203703703703702
+11 : 2.6363168724279835
+12 : 3.9223251028806585
+13 : 5.401234567901234
+14 : 6.944444444444445
+15 : 8.371913580246913
+16 : 9.452160493827162
+17 : 10.030864197530864
+18 : 10.030864197530864
+19 : 9.452160493827162
+20 : 8.371913580246913
+21 : 6.944444444444445
+22 : 5.401234567901234
+23 : 3.9223251028806585
+24 : 2.6363168724279835
+25 : 1.6203703703703702
+26 : 0.9002057613168725
+27 : 0.45010288065843623
+28 : 0.19290123456790123
+29 : 0.06430041152263374
+30 : 0.01286008230452675
+\end{lstlisting}
+Voici le graphe gÃ©nÃ©rÃ© : 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=8cm]{lancer_de_5_des.png}
+	\caption{Sorties possibles en lanÃ§ant 5 dÃ©s diffÃ©rents en 1 fois}
+\end{figure}
+\section{Nombres pseudo alÃ©atoires}
 \textbf{Exercice 1 :}
 \begin{enumerate}
-	\item Votre machine a une fonction RAND qui vous fournit de manière aléatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
-	\item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
+	\item Votre machine a une fonction RAND qui vous fournit de maniÃ¨re alÃ©atoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
+	\item Pouvez-vous Ãªtre satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
 \lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
-Voici le graphe généré par le script précédent : 
-\begin{figure}[h]
+\newpage
+Voici le graphe gÃ©nÃ©rÃ© par le script prÃ©cÃ©dent : 
+\begin{figure}[h!]
 	\centering
-	\includegraphics[height=7cm]{Nombre_pseudo-aleatoires_exo1.png}
+	\includegraphics[height=8cm]{Nombre_pseudo-aleatoires_exo1.png}
+	\caption{Sortie en fonction de leur nombre d'apparition}
 	\label{fig:cc40}
 \end{figure}
 
-\textbf{Réponse :} Le script suivant nous permet de répondre à la précédente question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe, que chaque bar devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918
+\textbf{RÃ©ponse :} Le script suivant nous permet de rÃ©pondre Ã  la prÃ©cÃ©dente question : Nous ne pouvons pas Ãªtre satisfait de la fonction random.randrange fournie par le constructeur car on voit, Ã  l'aide du graphe, que chaque bar devrait Ãªtre Ã©gale Ã  1 / N ici 0.10 or la premiÃ¨re est Ã©gale Ã  918 / 10000 = 0.0918
+\newline
 
 \textbf{Exercice 2 :}
-Voici un programme écrit dans le langage algorithmique TestAlgo.
-Ce petit programme peut être amélioré.
-\texttt{
+Voici un programme Ã©crit dans le langage algorithmique TestAlgo.
+Ce petit programme peut Ãªtre amÃ©liorÃ©.
+\begin{lstlisting}[frame=single]
 algo Nombres aleatoires
 var
   entier i,z;
@@ -57,12 +131,12 @@ principal
 			i:=i+1;
 		fintantque
 	fin
-}
-Que réalise ce programme ? Qu'en pensez-vous ?
-\section{Génération de nombres aléatoires}
-\subsection{Générateurs congruentiels linéaires}
+\end{lstlisting}
+Que rÃ©alise ce programme ? Qu'en pensez-vous ?
+\section{GÃ©nÃ©ration de nombres alÃ©atoires}
+\subsection{GÃ©nÃ©rateurs congruentiels linÃ©aires}
 \textbf{Exercice 3 :}
-Donner la suite des nombres aléatoires et en rechercher les périodes pour : 
+Donner la suite des nombres alÃ©atoires et en rechercher les pÃ©riodes pour : 
 \begin{enumerate}
 	\item b = 3, $X_0$ = 7, a = 5, N = 16 
 	\item b = 6, $X_0$ = 7, a = 5, N = 16 
@@ -73,8 +147,8 @@ Donner la suite des nombres aléatoires et en rechercher les périodes pour :
 \end{enumerate}
 \textbf{Exercice 4 :}
 \begin{enumerate}
-	\item Écrire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$$\in$N de réels compris entre 0 et 1, générée par un générateur congruentiel linéaires, et pour argument d'entrée $X_0$, a, b et N, les paramètres usuels d'un tel générateur.
-	\item En utilisant la fonction écrite en Scilab, étudiez les générateurs qui suivent : on regardera, en particulier, et si c'est possible, la période.
+	\item Ã‰crire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$ $\in$ $\mathbf{N}$ de rÃ©els compris entre 0 et 1, gÃ©nÃ©rÃ©e par un gÃ©nÃ©rateur congruentiel linÃ©aires, et pour argument d'entrÃ©e $X_0$, a, b et N, les paramÃ¨tres usuels d'un tel gÃ©nÃ©rateur.
+	\item En utilisant la fonction Ã©crite en Scilab, Ã©tudiez les gÃ©nÃ©rateurs qui suivent : on regardera, en particulier, et si c'est possible, la pÃ©riode.
 	\begin{itemize}
 		\item Pour a = 25, b = 16 et N = 256 = $2^8$ et pour $X_0$ successifs : $X_0$ = 12; $X_0$ = 11 ; $X_0$ = 0
 		\item \textbf{Turbo-Pascal} a = 129, b = 907633385 et N = $2^{32}$
@@ -82,20 +156,20 @@ Donner la suite des nombres aléatoires et en rechercher les périodes pour :
 		\item \textbf{Matlab} a = 19807, b = 0 et N = $2^{31}$-1
 	\end{itemize}
 \end{enumerate}
-\section{Autres méthodes}
-\subsection{Méthode de VON NEUMANN}
-Comment fonctionne cette méthode ?
+\section{Autres mÃ©thodes}
+\subsection{MÃ©thode de VON NEUMANN}
+Comment fonctionne cette mÃ©thode ?
 \begin{itemize}
 	\item On se donne un nombre A de N chiffres
-	\item On l'élève au carré
-	\item On choisit comme nombre suivant le nombre de N chiffres formé par la tranche du milieu du carré obtenu
+	\item On l'Ã©lÃ¨ve au carrÃ©
+	\item On choisit comme nombre suivant le nombre de N chiffres formÃ© par la tranche du milieu du carrÃ© obtenu
 	\item On divise ensuite par $10^N$
 \end{itemize}
 \begin{enumerate}
 	\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)
 	\item Donner un algorithme fournissant ces nombres
-	\item Faire une étude pour N = 4, et A = 5678
-	\item Faire une étude pour N = 6, et A de votre choix
-	\item Que penser de cette méthode ?
+	\item Faire une Ã©tude pour N = 4, et A = 5678
+	\item Faire une Ã©tude pour N = 6, et A de votre choix
+	\item Que penser de cette mÃ©thode ?
 \end{enumerate}
 \end{document}

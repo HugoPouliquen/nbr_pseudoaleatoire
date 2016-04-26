@@ -7,7 +7,7 @@ results = {}
 sorties = []
 for i in range(nbr_loop):
     result = random.randrange(0, N + 1)
-    sorties.append(result)  # + 1 pour être entre 1 et 1000 inclus
+    sorties.append(result)  # + 1 pour etre entre 1 et 1000 inclus
     # if result in results:
     #     counter = results[result]
     #     counter += 1
@@ -15,7 +15,7 @@ for i in range(nbr_loop):
     # else:
     #     results[result] = 1
 
-print("\nGraphique des résultats en fonction de leur nombre d'apparition")
+print("\nGraphique des resultats en fonction de leur nombre d'apparition")
 
 
 # nbr_apparition = []
