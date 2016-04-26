@@ -29,10 +29,3 @@ plt.axis([0, N, 0, 0.20*nbr_loop])
 plt.xlabel('Sorties')
 plt.ylabel("Nombre d'apparitions")
 plt.show()
-
-
-# Commentaires:
-
-# Au vu du graphe la fonction random.randrange donné par le constructeur
-# n'est pas satisfesant chaque bar devrait être égale à 1 / N ici 0.10 hors la
-# première est égale à (/!\ 918 à regarder sur le graphe) 918 / 10000 = 0.0918

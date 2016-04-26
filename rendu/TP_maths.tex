@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}     
 \usepackage{listings}
+\usepackage{graphicx}
 \title{Travaux Pratiques - Probabilités}
 
 \author{Dylan \bsc{TROLES} \& Hugo \bsc{POULIQUEN}}
@@ -30,8 +31,15 @@ Voici le résultat généré par le script :
 \item Votre machine a une fonction RAND qui vous fournit de manière aléatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
 \item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
-\textbf{Réponse :} Le script suivant nous permet de répondre à la précédente question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe, que chaque bar devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918
 \lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
+Voici le graphe généré par le script précédent :
+\begin{figure}[b]
+\begin{center}
+\includegraphics[scale=0.6]{Nombre_pseudo-aleatoires_exo1.png}
+\end{center}
+\caption{Graphe}
+\end{figure} 
+\textbf{Réponse :} Le script suivant nous permet de répondre à la précédente question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe, que chaque bar devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918
 \textbf{Exercice 2 :}
 Voici un programme écrit dans le langage algorithmique TestAlgo.
 Ce petit programme peut être amélioré.
