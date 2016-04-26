@@ -19,8 +19,8 @@
 Une épreuve consiste à lancer 5 dés et à considérer la somme amenée à chaque lancer.
 Construire un programme qui donne : 
 \begin{enumerate}
-\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la fréquence de chaque sortie.
-\item Un tableau et un graphique donnant les fréquences de chaque sortie.
+	\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la fréquence de chaque sortie.
+	\item Un tableau et un graphique donnant les fréquences de chaque sortie.
 \end{enumerate}
 Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est nécessaire d'installer la librairie matplotlib.
 \lstinputlisting[numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
@@ -28,18 +28,19 @@ Voici le résultat généré par le script :
 \section{Nombres pseudo aléatoires}
 \textbf{Exercice 1 :}
 \begin{enumerate}
-\item Votre machine a une fonction RAND qui vous fournit de manière aléatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
-\item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
+	\item Votre machine a une fonction RAND qui vous fournit de manière aléatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
+	\item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
 \lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
-Voici le graphe généré par le script précédent :
-\begin{figure}[b]
-\begin{center}
-\includegraphics[scale=0.6]{Nombre_pseudo-aleatoires_exo1.png}
-\end{center}
-\caption{Graphe}
-\end{figure} 
+Voici le graphe généré par le script précédent : 
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=7cm]{Nombre_pseudo-aleatoires_exo1.png}
+	\label{fig:cc40}
+\end{figure}
+
 \textbf{Réponse :} Le script suivant nous permet de répondre à la précédente question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe, que chaque bar devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918
+
 \textbf{Exercice 2 :}
 Voici un programme écrit dans le langage algorithmique TestAlgo.
 Ce petit programme peut être amélioré.
@@ -63,42 +64,38 @@ Que réalise ce programme ? Qu'en pensez-vous ?
 \textbf{Exercice 3 :}
 Donner la suite des nombres aléatoires et en rechercher les périodes pour : 
 \begin{enumerate}
-\item b = 3, $X_0$ = 7, a = 5, N = 16 
-\item b = 6, $X_0$ = 7, a = 5, N = 16 
-\item b = 0, $X_0$ = 1, a = 2, N = 17 
-\item b = 6, $X_0$ = 1, a = 2, N = 17 
-\item b = 0, $X_0$ = 3, a = 13, N = $2^7$ 
-\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$ 
+	\item b = 3, $X_0$ = 7, a = 5, N = 16 
+	\item b = 6, $X_0$ = 7, a = 5, N = 16 
+	\item b = 0, $X_0$ = 1, a = 2, N = 17 
+	\item b = 6, $X_0$ = 1, a = 2, N = 17 
+	\item b = 0, $X_0$ = 3, a = 13, N = $2^7$ 
+	\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$ 
 \end{enumerate}
 \textbf{Exercice 4 :}
 \begin{enumerate}
-\item Écrire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$$\in$N de réels compris entre 0 et 1, générée par un générateur congruentiel linéaires, et pour argument d'entrée $X_0$, a, b et N, les paramètres usuels d'un tel générateur.
-\item En utilisant la fonction écrite en Scilab, étudiez les générateurs qui suivent : on regardera, en particulier, et si c'est possible, la période.
-\begin{itemize}
-\item Pour a = 25, b = 16 et N = 256 = $2^8$ et pour $X_0$ successifs : $X_0$ = 12; $X_0$ = 11 ; $X_0$ = 0
-\item \textbf{Turbo-Pascal} a = 129, b = 907633385 et N = $2^{32}$
-\item \textbf{Unix} a = 1103515245, b = 12345 et N = $2^{32}$
-\item \textbf{Matlab} a = 19807, b = 0 et N = $2^{31}$-1
-\end{itemize}
+	\item Écrire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$$\in$N de réels compris entre 0 et 1, générée par un générateur congruentiel linéaires, et pour argument d'entrée $X_0$, a, b et N, les paramètres usuels d'un tel générateur.
+	\item En utilisant la fonction écrite en Scilab, étudiez les générateurs qui suivent : on regardera, en particulier, et si c'est possible, la période.
+	\begin{itemize}
+		\item Pour a = 25, b = 16 et N = 256 = $2^8$ et pour $X_0$ successifs : $X_0$ = 12; $X_0$ = 11 ; $X_0$ = 0
+		\item \textbf{Turbo-Pascal} a = 129, b = 907633385 et N = $2^{32}$
+		\item \textbf{Unix} a = 1103515245, b = 12345 et N = $2^{32}$
+		\item \textbf{Matlab} a = 19807, b = 0 et N = $2^{31}$-1
+	\end{itemize}
 \end{enumerate}
 \section{Autres méthodes}
 \subsection{Méthode de VON NEUMANN}
 Comment fonctionne cette méthode ?
 \begin{itemize}
-\item On se donne un nombre A de N chiffres
-\item On l'élève au carré
-\item On choisit comme nombre suivant le nombre de N chiffres formé par la tranche du milieu du carré obtenu
-\item On divise ensuite par $10^N$
+	\item On se donne un nombre A de N chiffres
+	\item On l'élève au carré
+	\item On choisit comme nombre suivant le nombre de N chiffres formé par la tranche du milieu du carré obtenu
+	\item On divise ensuite par $10^N$
 \end{itemize}
 \begin{enumerate}
-\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)
-\item Donner un algorithme fournissant ces nombres
-\item Faire une étude pour N = 4, et A = 5678
-\item Faire une étude pour N = 6, et A de votre choix
-\item Que penser de cette méthode ?
+	\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)
+	\item Donner un algorithme fournissant ces nombres
+	\item Faire une étude pour N = 4, et A = 5678
+	\item Faire une étude pour N = 6, et A de votre choix
+	\item Que penser de cette méthode ?
 \end{enumerate}
-\subsection{Méthode de HEWLET-PACKARD}
-Elle consiste à construire la suite ($Z_{n}$)$_{n}$$\in$N définie par 
-
-\subsection{D'autres fonctions}
 \end{document}
