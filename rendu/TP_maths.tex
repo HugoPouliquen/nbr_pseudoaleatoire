@@ -93,7 +93,7 @@ Tableau des frequences de chaque somme :
 Voici le graphe généré : 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=8cm]{lancer_de_5_des.png}
+	\includegraphics[width=\textwidth]{lancer_de_5_des.png}
 	\caption{Sorties possibles en lançant 5 dés différents en 1 fois}
 \end{figure}
 \section{Nombres pseudo aléatoires}
@@ -103,18 +103,17 @@ Voici le graphe généré :
 	\item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
 \lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
+\textbf{Réponse :} \newline 
+Le script précédent nous permet de répondre à la question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe ci-dessous, que chaque barre devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918 et que la dernière est très largement au dessus de 1700 ce qui vaut un indice de 1.700 !
 \newpage
 Voici le graphe généré par le script précédent : 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=8cm]{Nombre_pseudo-aleatoires_exo1.png}
+	\includegraphics[width=\textwidth]{Nombre_pseudo-aleatoires_exo1.png}
 	\caption{Sortie en fonction de leur nombre d'apparition}
 	\label{fig:cc40}
 \end{figure}
-
-\textbf{Réponse :} Le script suivant nous permet de répondre à la précédente question : Nous ne pouvons pas être satisfait de la fonction random.randrange fournie par le constructeur car on voit, à l'aide du graphe, que chaque bar devrait être égale à 1 / N ici 0.10 or la première est égale à 918 / 10000 = 0.0918
 \newline
-
 \textbf{Exercice 2 :}
 Voici un programme écrit dans le langage algorithmique TestAlgo.
 Ce petit programme peut être amélioré.
@@ -166,7 +165,13 @@ Comment fonctionne cette méthode ?
 	\item On divise ensuite par $10^N$
 \end{itemize}
 \begin{enumerate}
-	\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)
+	\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)\newline
+	\textbf{Réponse :} A est un nombre de N chiffres. \newline
+	10$^{N-1}$ $\le$ A < 10$^N$\newline
+	On élève au carré : 10$^{2N-2}$ $\le$ A$^2$ < 10$^{2N}$\newline
+	B est le nouveau nombre formé par la tranche du milieu du carré obtenu :\newline
+	10$^{N-1}$ $\le$ B < 10$^N$\newline
+	On divise par 10$^N$ : 0,1 $\le$ $\frac{B}{10^N}$  < 1\newline
 	\item Donner un algorithme fournissant ces nombres
 	\item Faire une étude pour N = 4, et A = 5678
 	\item Faire une étude pour N = 6, et A de votre choix
