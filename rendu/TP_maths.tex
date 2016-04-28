@@ -1,9 +1,10 @@
-\documentclass{book}
+\documentclass[oneside]{book}
 \usepackage[utf8x]{inputenc}    
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}     
 \usepackage{listings}
 \usepackage{graphicx}
+\usepackage{courier}
 \title{Travaux Pratiques - Probabilités}
 
 \author{Dylan \bsc{TROLES} \& Hugo \bsc{POULIQUEN}}
@@ -11,6 +12,7 @@
 \date{4 mai 2016}
 
 \begin{document}
+
 \maketitle
 
 \chapter{Génération de nombres pseudo-aléatoires}
@@ -23,7 +25,7 @@ Construire un programme qui donne :
 	\item Un tableau et un graphique donnant les fréquences de chaque sortie.
 \end{enumerate}
 Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est nécessaire d'installer la librairie matplotlib.
-\lstinputlisting[numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
+\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
 Voici le résultat généré par le script : 
 \begin{lstlisting}[frame=single]
 $ python3 lancer_de_5_des.py 
@@ -33,8 +35,9 @@ Nombre de sommes possibles : 25
 
 -> Lancement des des...
 Somme des des lances : 21
-
+\end{lstlisting}
 Tableau du nombre de combinaisons possibles pour chaque somme :
+\begin{lstlisting}[frame=single]
 5 : 1
 6 : 5
 7 : 15
@@ -61,8 +64,9 @@ Tableau du nombre de combinaisons possibles pour chaque somme :
 28 : 15
 29 : 5
 30 : 1
-
+\end{lstlisting}
 Tableau des frequences de chaque somme :
+\begin{lstlisting}[frame=single]
 5 : 0.01286008230452675
 6 : 0.06430041152263374
 7 : 0.19290123456790123
@@ -102,10 +106,9 @@ Voici le graphe généré :
 	\item Votre machine a une fonction RAND qui vous fournit de manière aléatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
 	\item Pouvez-vous être satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
-\lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
-\textbf{Réponse :} \newline 
-
-Au vu du graphe, l'aléatoire de la fonction random.randrange donnée par le constructeur n'est pas satisfaisant. Chaque bar devrait avoir une probabilité de $\frac{1}{N}$ car nous sommes dans l'intervalle \{1, ..., 10\}. Dans notre exemple, N = 10. Pour chaque barre, $\frac{1}{N}$ devrait donc être égale à 0,10 .
+\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
+\textbf{Réponse :} 
+Au vu du graphe, l'aléatoire de la fonction random.randrange donnée par le constructeur n'est pas satisfaisant. Chaque barre devrait avoir une probabilité de $\frac{1}{N}$ car nous sommes dans l'intervalle \{1, ..., 10\}. Dans notre exemple, N = 10. Pour chaque barre, $\frac{1}{N}$ devrait donc être égale à 0,10 .
 
 Prenons la première barre, on remarque que la valeur 1 est sortie 918 fois Calculons sa probabilité : $\frac{918}{10000}$ = 0.0918
 
@@ -185,10 +188,10 @@ Comment fonctionne cette méthode ?
 	On élève au carré : 10$^{2N-2}$ $\le$ A$^2$ < 10$^{2N}$\newline
 	B est le nouveau nombre formé par la tranche du milieu du carré obtenu :\newline
 	10$^{N-1}$ $\le$ B < 10$^N$\newline
-	On divise par 10$^N$ : 0,1 $\le$ $\frac{B}{10^N}$  < 1\newline
+	On divise par 10$^N$ : 0,1 $\le$ $\frac{B}{10^N}$  < 1
 	\item Donner un algorithme fournissant ces nombres \newline
 	\textbf{Réponse :} 
-	\lstinputlisting[numbers=left,caption=VonNeumann.py,language=Python]{../VonNeumann.py}
+	\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=VonNeumann.py,language=Python]{../VonNeumann.py}
 	\item Faire une étude pour N = 4, et A = 5678 \newline
 	\textbf{Réponse :} \begin{lstlisting}[frame=single]
 	A=5678 
