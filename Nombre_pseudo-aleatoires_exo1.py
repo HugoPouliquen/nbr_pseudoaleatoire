@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import random
 import matplotlib.pyplot as plt
 
@@ -10,8 +11,6 @@ sorties = []
 for i in range(nbr_loop):
     result = random.randrange(0, N + 1)
     sorties.append(result)
-
-print("\nGraphique des résultats en fonction de leur nombre d'apparition")
 
 # CREATION DU GRAPHIQUE
 plt.title("Sortie en fonction de leur nombre d'apparition")
