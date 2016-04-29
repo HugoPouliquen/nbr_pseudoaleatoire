@@ -33,10 +33,10 @@ aléatoire mais n'en est pas un.
 Pour le prouver calculons la probabilités théorique de chaque valeur :
 1 / (N + 1) = 0.25 avec N = 3
 
-0 = 0,15
-1 = 0,32
-2 = 0,33
-3 = 0,20
+* 0 : 0,15
+* 1 : 0,32
+* 2 : 0,33
+* 3 : 0,20
 
 Cette fois les probabilités obtenues se rapproche un peu plus de la probabilité
 théorique cependant on ne peut pas encore parler d'aléatoire car les différences
