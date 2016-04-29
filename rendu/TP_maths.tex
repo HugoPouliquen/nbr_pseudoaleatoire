@@ -1,41 +1,133 @@
-\documentclass{book}
-\usepackage[latin1]{inputenc}    
+\documentclass[oneside]{book}
+\usepackage[utf8x]{inputenc}    
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}     
 \usepackage{listings}
-\title{Travaux Pratiques - ProbabilitÈs}
+\usepackage{graphicx}
+\usepackage{courier}
+\title{Travaux Pratiques - Probabilit√©s}
 
 \author{Dylan \bsc{TROLES} \& Hugo \bsc{POULIQUEN}}
 
 \date{4 mai 2016}
 
 \begin{document}
+
 \maketitle
 
-\chapter{GÈnÈration de nombres pseudo-alÈatoires}
-\section{Approche frÈquentielle des probabilitÈs}
-\subsection{Le lancer de 5 dÈs}
-Une Èpreuve consiste ‡ lancer 5 dÈs et ‡ considÈrer la somme amenÈe ‡ chaque lancer.
+\chapter{G√©n√©ration de nombres pseudo-al√©atoires}
+\section{Approche fr√©quentielle des probabilit√©s}
+\subsection{Le lancer de 5 d√©s}
+Une √©preuve consiste √† lancer 5 d√©s et √† consid√©rer la somme amen√©e √† chaque lancer.
 Construire un programme qui donne : 
 \begin{enumerate}
-\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la frÈquence de chaque sortie.
-\item Un tableau et un graphique donnant les frÈquences de chaque sortie.
+	\item Les valeurs de la somme, le nombre de sorties possibles pour chaque valeur, et la fr√©quence de chaque sortie.
+	\item Un tableau et un graphique donnant les fr√©quences de chaque sortie.
 \end{enumerate}
-Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est nÈcessaire d'installer la librairie matplotlib.
-\lstinputlisting[numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
-Voici le rÈsultat gÈnÈrÈ par le script : 
-\section{Nombres pseudo alÈatoires}
+Pour cet exercice, nous avons fait un script python. Pour pouvoir lancer ce script, il est n√©cessaire d'installer la librairie matplotlib.
+\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=Lancer\_de\_5\_des.py,language=Python]{../lancer_de_5_des.py}
+Voici le r√©sultat g√©n√©r√© par le script : 
+\begin{lstlisting}[frame=single]
+$ python3 lancer_de_5_des.py 
+
+Traitement pour : 5 des comportant 6 faces de 1 a 6
+Nombre de sommes possibles : 25
+
+-> Lancement des des...
+Somme des des lances : 21
+\end{lstlisting}
+Tableau du nombre de combinaisons possibles pour chaque somme :
+\begin{lstlisting}[frame=single]
+5 : 1
+6 : 5
+7 : 15
+8 : 35
+9 : 70
+10 : 126
+11 : 205
+12 : 305
+13 : 420
+14 : 540
+15 : 651
+16 : 735
+17 : 780
+18 : 780
+19 : 735
+20 : 651
+21 : 540
+22 : 420
+23 : 305
+24 : 205
+25 : 126
+26 : 70
+27 : 35
+28 : 15
+29 : 5
+30 : 1
+\end{lstlisting}
+Tableau des frequences de chaque somme :
+\begin{lstlisting}[frame=single]
+5 : 0.01286008230452675
+6 : 0.06430041152263374
+7 : 0.19290123456790123
+8 : 0.45010288065843623
+9 : 0.9002057613168725
+10 : 1.6203703703703702
+11 : 2.6363168724279835
+12 : 3.9223251028806585
+13 : 5.401234567901234
+14 : 6.944444444444445
+15 : 8.371913580246913
+16 : 9.452160493827162
+17 : 10.030864197530864
+18 : 10.030864197530864
+19 : 9.452160493827162
+20 : 8.371913580246913
+21 : 6.944444444444445
+22 : 5.401234567901234
+23 : 3.9223251028806585
+24 : 2.6363168724279835
+25 : 1.6203703703703702
+26 : 0.9002057613168725
+27 : 0.45010288065843623
+28 : 0.19290123456790123
+29 : 0.06430041152263374
+30 : 0.01286008230452675
+\end{lstlisting}
+Voici le graphe g√©n√©r√© : 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{lancer_de_5_des.png}
+	\caption{Sorties possibles en lan√ßant 5 d√©s diff√©rents en 1 fois}
+\end{figure}
+\section{Nombres pseudo al√©atoires}
 \textbf{Exercice 1 :}
 \begin{enumerate}
-\item Votre machine a une fonction RAND qui vous fournit de maniËre alÈatoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
-\item Pouvez-vous Ítre satisfait de la fonction fournie par le constructeur ?
+	\item Votre machine a une fonction RAND qui vous fournit de mani√®re al√©atoire u nombre de [0,1[. Donner un algorithme utilisant la fonction RAND fournissant un nombre entier entre 1 et N
+	\item Pouvez-vous √™tre satisfait de la fonction fournie par le constructeur ?
 \end{enumerate}
-\textbf{RÈponse :} Le script suivant nous permet de rÈpondre ‡ la prÈcÈdente question : Nous ne pouvons pas Ítre satisfait de la fonction random.randrange fournie par le constructeur car on voit, ‡ l'aide du graphe, que chaque bar devrait Ítre Ègale ‡ 1 / N ici 0.10 or la premiËre est Ègale ‡ 918 / 10000 = 0.0918
-\lstinputlisting[numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
+\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=Nombre\_pseudo\-aleatoires\_exo1.py,language=Python]{../Nombre_pseudo-aleatoires_exo1.py}
+\textbf{R√©ponse :} 
+Au vu du graphe, l'al√©atoire de la fonction random.randrange donn√©e par le constructeur n'est pas satisfaisant. Chaque barre devrait avoir une probabilit√© de $\frac{1}{N}$ car nous sommes dans l'intervalle \{1, ..., 10\}. Dans notre exemple, N = 10. Pour chaque barre, $\frac{1}{N}$ devrait donc √™tre √©gale √† 0,10 .
+
+Prenons la premi√®re barre, on remarque que la valeur 1 est sortie 918 fois Calculons sa probabilit√© : $\frac{918}{10000}$ = 0.0918
+
+Prenons la derni√®re barre, on remarque que la valeur 10 est sortie 1736 fois Calculons sa probabilit√© : $\frac{1736}{10000}$ = 0.1736
+
+Les probabilit√©s d'apparitions de chaque valeur ne respecte donc pas 0.10. En conclusion, la fonction random.randrange n'est pas al√©atoire et pour notre exemple, la valeur 10 apparait le plus souvent.
+\newpage
+Voici le graphe g√©n√©r√© par le script pr√©c√©dent : 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{Nombre_pseudo-aleatoires_exo1.png}
+	\caption{Sortie en fonction de leur nombre d'apparition}
+	\label{fig:cc40}
+\end{figure}
+\newline
 \textbf{Exercice 2 :}
-Voici un programme Ècrit dans le langage algorithmique TestAlgo.
-Ce petit programme peut Ítre amÈliorÈ.
-\texttt{
+Voici un programme √©crit dans le langage algorithmique TestAlgo.
+Ce petit programme peut √™tre am√©lior√©.
+\begin{lstlisting}[frame=single]
 algo Nombres aleatoires
 var
   entier i,z;
@@ -48,49 +140,73 @@ principal
 			i:=i+1;
 		fintantque
 	fin
-}
-Que rÈalise ce programme ? Qu'en pensez-vous ?
-\section{GÈnÈration de nombres alÈatoires}
-\subsection{GÈnÈrateurs congruentiels linÈaires}
+\end{lstlisting} 
+\newpage Que r√©alise ce programme ? Qu'en pensez-vous ? \newline 
+\textbf{R√©ponse :} \newline
+Ce programme permet de calculer 100 fois une valeur comprise entre 0 et 1, multipli√© par 3 et arrondi. La valeur est choisit gr√¢ce √† la fonction : aleatoire(). Pour terminer ce nombre est affich√© dans la console et la boucle est incr√©ment√©e.
+
+Au vu du graphe nous pensons que cette algorithme se rapproche d'un algorithme al√©atoire mais n'en est pas un. Pour le prouver calculons la probabilit√©s th√©orique de chaque valeur :\newline \newline $\frac{1}{N+1}$ = 0.25 avec N = 3 \newline \newline
+0 : 0,15 \newline 1 : 0,32 \newline 2 : 0,33 \newline 3 : 0,20 \newline
+
+Cette fois les probabilit√©s obtenues se rapproche un peu plus de la probabilit√© th√©orique cependant on ne peut pas encore parler d'al√©atoire car les diff√©rences entre chaque probabilit√©s d'apparition est bien trop diff√©rente.
+\section{G√©n√©ration de nombres al√©atoires}
+\subsection{G√©n√©rateurs congruentiels lin√©aires}
 \textbf{Exercice 3 :}
-Donner la suite des nombres alÈatoires et en rechercher les pÈriodes pour : 
+Donner la suite des nombres al√©atoires et en rechercher les p√©riodes pour : 
 \begin{enumerate}
-\item b = 3, $X_0$ = 7, a = 5, N = 16 
-\item b = 6, $X_0$ = 7, a = 5, N = 16 
-\item b = 0, $X_0$ = 1, a = 2, N = 17 
-\item b = 6, $X_0$ = 1, a = 2, N = 17 
-\item b = 0, $X_0$ = 3, a = 13, N = $2^7$ 
-\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$ 
+	\item b = 3, $X_0$ = 7, a = 5, N = 16 
+	\item b = 6, $X_0$ = 7, a = 5, N = 16 
+	\item b = 0, $X_0$ = 1, a = 2, N = 17 
+	\item b = 6, $X_0$ = 1, a = 2, N = 17 
+	\item b = 0, $X_0$ = 3, a = 13, N = $2^7$ 
+	\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$ 
 \end{enumerate}
 \textbf{Exercice 4 :}
 \begin{enumerate}
-\item …crire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$$\in$N de rÈels compris entre 0 et 1, gÈnÈrÈe par un gÈnÈrateur congruentiel linÈaires, et pour argument d'entrÈe $X_0$, a, b et N, les paramËtres usuels d'un tel gÈnÈrateur.
-\item En utilisant la fonction Ècrite en Scilab, Ètudiez les gÈnÈrateurs qui suivent : on regardera, en particulier, et si c'est possible, la pÈriode.
-\begin{itemize}
-\item Pour a = 25, b = 16 et N = 256 = $2^8$ et pour $X_0$ successifs : $X_0$ = 12; $X_0$ = 11 ; $X_0$ = 0
-\item \textbf{Turbo-Pascal} a = 129, b = 907633385 et N = $2^{32}$
-\item \textbf{Unix} a = 1103515245, b = 12345 et N = $2^{32}$
-\item \textbf{Matlab} a = 19807, b = 0 et N = $2^{31}$-1
-\end{itemize}
+	\item √âcrire une fonction Scilab qui pour argument de sortie une suite ($U_{n}$)$_{n}$ $\in$ $\mathbf{N}$ de r√©els compris entre 0 et 1, g√©n√©r√©e par un g√©n√©rateur congruentiel lin√©aires, et pour argument d'entr√©e $X_0$, a, b et N, les param√®tres usuels d'un tel g√©n√©rateur.
+	\item En utilisant la fonction √©crite en Scilab, √©tudiez les g√©n√©rateurs qui suivent : on regardera, en particulier, et si c'est possible, la p√©riode.
+	\begin{itemize}
+		\item Pour a = 25, b = 16 et N = 256 = $2^8$ et pour $X_0$ successifs : $X_0$ = 12; $X_0$ = 11 ; $X_0$ = 0
+		\item \textbf{Turbo-Pascal} a = 129, b = 907633385 et N = $2^{32}$
+		\item \textbf{Unix} a = 1103515245, b = 12345 et N = $2^{32}$
+		\item \textbf{Matlab} a = 19807, b = 0 et N = $2^{31}$-1
+	\end{itemize}
 \end{enumerate}
-\section{Autres mÈthodes}
-\subsection{MÈthode de VON NEUMANN}
-Comment fonctionne cette mÈthode ?
+\section{Autres m√©thodes}
+\subsection{M√©thode de VON NEUMANN}
+Comment fonctionne cette m√©thode ?
 \begin{itemize}
-\item On se donne un nombre A de N chiffres
-\item On l'ÈlËve au carrÈ
-\item On choisit comme nombre suivant le nombre de N chiffres formÈ par la tranche du milieu du carrÈ obtenu
-\item On divise ensuite par $10^N$
+	\item On se donne un nombre A de N chiffres
+	\item On l'√©l√®ve au carr√©
+	\item On choisit comme nombre suivant le nombre de N chiffres form√© par la tranche du milieu du carr√© obtenu
+	\item On divise ensuite par $10^N$
 \end{itemize}
 \begin{enumerate}
-\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)
-\item Donner un algorithme fournissant ces nombres
-\item Faire une Ètude pour N = 4, et A = 5678
-\item Faire une Ètude pour N = 6, et A de votre choix
-\item Que penser de cette mÈthode ?
+	\item Montrer que l'on obtient bien une suite de nombres compris entre 0 et 1 (1 exclu)\newline
+	\textbf{R√©ponse :} A est un nombre de N chiffres. \newline
+	10$^{N-1}$ $\le$ A < 10$^N$\newline
+	On √©l√®ve au carr√© : 10$^{2N-2}$ $\le$ A$^2$ < 10$^{2N}$\newline
+	B est le nouveau nombre form√© par la tranche du milieu du carr√© obtenu :\newline
+	10$^{N-1}$ $\le$ B < 10$^N$\newline
+	On divise par 10$^N$ : 0,1 $\le$ $\frac{B}{10^N}$  < 1
+	\item Donner un algorithme fournissant ces nombres \newline
+	\textbf{R√©ponse :} 
+	\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=VonNeumann.py,language=Python]{../VonNeumann.py}
+	\item Faire une √©tude pour N = 4, et A = 5678 \newline
+	\textbf{R√©ponse :} \begin{lstlisting}[frame=single]
+	A=5678 
+	N=4 
+	Carre de A=32239684 
+	Tranche=2396 
+	Resultat=0.2396 \end{lstlisting}
+	\item Faire une √©tude pour N = 6, et A de votre choix \newline
+	\textbf{R√©ponse :} \begin{lstlisting}[frame=single]
+	A=123456
+ 	N=6
+	Carre de A=15241383936
+	Tranche=241383
+	Resultat=0.241383
+	\end{lstlisting}
+	\item Que penser de cette m√©thode ?
 \end{enumerate}
-\subsection{MÈthode de HEWLET-PACKARD}
-Elle consiste ‡ construire la suite ($Z_{n}$)$_{n}$$\in$N dÈfinie par 
-
-\subsection{D'autres fonctions}
 \end{document}
