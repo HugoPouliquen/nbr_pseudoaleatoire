@@ -5,6 +5,7 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{courier}
+\pagenumbering{arabic}
 \title{Travaux Pratiques - Probabilités}
 
 \author{Dylan \bsc{TROLES} \& Hugo \bsc{POULIQUEN}}
@@ -152,22 +153,63 @@ principal
 Ce programme donne un nombre entier entre 0 et 3.
 
 Au vu du graphe nous pensons que cet algorithme se rapproche d'un algorithme aléatoire mais n'en est pas un. Pour le prouver calculons la probabilité théorique de chaque valeur :\newline \newline $\frac{1}{N+1}$ = 0.25 avec N = 3 \newline \newline
-Voici les fréquences observées à partir du graphe dans l'expérimentation
+Voici les fréquences observées à partir du graphe dans l'expérimentation \newline
 0 : 0,15 \newline 1 : 0,32 \newline 2 : 0,33 \newline 3 : 0,20 \newline
 
-Cette fois, les probabilités obtenues se rapprochent un peu plus de la probabilité théorique cependant on ne peut pas encore parler d'aléatoire car les différences entre chaque probabilités d'apparition est bien trop différente.
+Cette fois, les probabilités obtenues se rapprochent un peu plus de la probabilité théorique. L'aléatoire n'est toujours pas uniforme.
 \section{Génération de nombres aléatoires}
 \subsection{Générateurs congruentiels linéaires}
 \textbf{Exercice 3 :}
 Donner la suite des nombres aléatoires et en rechercher les périodes pour : 
 \begin{enumerate}
 	\item b = 3, $X_0$ = 7, a = 5, N = 16 
+	\begin{lstlisting}[frame=single]
+	-- b = 3, X0 = 7, a = 5, N = 16--
+n  = 0 1 2 3 4  5  6 7  8  9 10 11 12 13 14 15 16 
+Xn = 7 6 1 8 11 10 5 12 15 14 9 0  3  2  13 4  7 
+La periode est de : 16
+\end{lstlisting}
 	\item b = 6, $X_0$ = 7, a = 5, N = 16 
+	\begin{lstlisting}[frame=single]
+	-- b = 6, X0 = 7, a = 5, N = 16--
+n  = 0 1 2 3 4  5 6  7  8 9  10 11 12 13 14 15 16 
+Xn = 7 9 3 5 15 1 11 13 7 9  3  5  15 1  11 13 7 
+La periode est de : 8
+
+	\end{lstlisting}
 	\item b = 0, $X_0$ = 1, a = 2, N = 17 
+	\begin{lstlisting}[frame=single]
+	-- b = 0, X0 = 1, a = 2, N = 17--
+n  = 0 1 2 3 4  5  6  7 8 9 10 11 12 13 14 15 16 17 
+Xn = 1 2 4 8 16 15 13 9 1 2 4  8  16 15 13 9  1  2 
+La periode est de : 8
+	\end{lstlisting}
 	\item b = 6, $X_0$ = 1, a = 2, N = 17 
+	\begin{lstlisting}[frame=single]
+	-- b = 6, X0 = 1, a = 2, N = 17--
+n  = 0 1 2 3  4 5  6 7 8 9 10 11 12 13 14 15 16 17 
+Xn = 1 8 5 16 4 14 0 6 1 8 5  16 4  14 0  6  1  8 
+La periode est de : 8
+
+	\end{lstlisting}
 	\item b = 0, $X_0$ = 3, a = 13, N = $2^7$ 
-	\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$ 
+	\begin{lstlisting}[frame=single]
+	-- b = 0, X0 = 3, a = 13, N = 128--
+La suite est trop importante pour etre affichee
+
+La periode est de : 32
+
+	\end{lstlisting}
+	\item b = 0, $X_0$ = 4567, a = 9749, N = $2^{17}$
+	\begin{lstlisting}[frame=single]
+	-- b = 0, X0 = 4567, a = 9749, N = 131072--
+La suite est trop importante pour etre affichee
+
+La periode est de : 32768
+    \end{lstlisting}
 \end{enumerate}
+Ces résultats sont issus du script suivant :
+\lstinputlisting[basicstyle=\ttfamily,numbers=left,caption=Nombre\_pseudo-aleatoires\_exo3.py,language=Python]{../Nombre_pseudo-aleatoires_exo3.py}
 \newpage
 \textbf{Exercice 4 :}
 \begin{enumerate}
@@ -219,8 +261,8 @@ Comment fonctionne cette méthode ?
 	\end{lstlisting}
 	\item Que penser de cette méthode ? \newline
 	\textbf{Réponse :} \newline
-	Pour 100 lancés, on obtient les résultats de la figure suivante. Ces résultats montrent que l'aléatoire de VonNeumann n'uniformise pas les numéros de sortie. Si l'on compare avec la méthode du constructeur, VonNeumann est nettement plus aléatoire. On peut dire ceci car la différence du nombre d'apparition minimale et maximale n'est pas aussi importante que pour la méthode du constructeur.\newline
-	Cette méthode est plus aléatoire que la méthode constructeur, mais n'est pas totalement aléatoire non plus car le nombre d'apparitions varie en fonction des sorties.
+	Pour 100 lancés, on obtient les résultats de la figure suivante. Ces résultats montrent que l'aléatoire de VonNeumann n'uniformise pas les numéros de sortie. Si l'on compare avec la fonction random de Python (cf Ex1), VonNeumann est nettement plus aléatoire. La différence entre les apparitions de chaque valeur est moins importante que dans l'analyse de l'exercice 1.\newline
+	Cette méthode est plus aléatoire que la fonction random de Python, mais n'est pas uniforme car toutes les valeurs n'ont pas le même nombre d'apparitions.
 	\begin{figure}[h!]
 		\centering
 			\includegraphics[width=\textwidth]{VonNeumann.png}

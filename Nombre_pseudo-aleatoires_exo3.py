@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 # Usage : La fonction congru generator permet de generer des congruences lineaire
-# Param : les paramètre sont ceux donné par l'exercice pour le calcul des congruences.
-# Sortie: La sortie est une suite de nombre aléatoire avec la période
+# Param : les parametres sont ceux donnes par l'exercice pour le calcul des congruences.
+# Sortie: La sortie est une suite de nombres aleatoires avec la periode
 def Congru_generator(b, X, a, N, display = 1):
     first = True
     p = 0
@@ -14,11 +14,10 @@ def Congru_generator(b, X, a, N, display = 1):
     X = first_element = X
     Xn_res.append(first_element)  # Traitement de X0
     n_res.append(0)
-
     X = ((a*X)+b) % N
     Xn_res.append(X)  # Traitement de X1
     n_res.append(1)
-    for j in range(2, N + 1): # Boucle pour générer chaque nombre
+    for j in range(2, N + 1): # Boucle pour generer chaque nombre
         X = ((a*X)+b) % N
         if(X == first_element and first is True): # Recherche de la periode
             p = j

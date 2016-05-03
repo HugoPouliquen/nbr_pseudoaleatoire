@@ -7,7 +7,7 @@ nbr_loop = 10000
 results = {}
 sorties = []
 
-# Boucle réalisant 100 000 tirage "aléatoire" entre 1 et 10
+# Boucle realisant 100 000 tirages "aleatoires" entre 1 et 10
 for i in range(nbr_loop):
     result = random.randrange(0, N + 1)
     sorties.append(result)
